@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
-    public GameObject[] enemyPrefabs;
-    public Transform[] spawnPoint;
-    [SerializeField] private float timeSpawn = 2f;
-    private float time = 0;
-
+    [SerializeField] GameObject[] enemyPrefabs;
+    [SerializeField] Transform[] spawnPoint;
+    [SerializeField] float timeSpawn = 2f;
+    float time = 0;
     private void Update()
     {
         int ranPoint = Random.Range(0, spawnPoint.Length);

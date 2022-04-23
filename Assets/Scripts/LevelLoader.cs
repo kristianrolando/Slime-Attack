@@ -11,19 +11,12 @@ public class LevelLoader : MonoBehaviour
 
     private void Start()
     {
-        //Invoke("LoadLevel", 3f);
         StartCoroutine(LoadLevelDelay("MainMenu", 3f));
     }
 
-    public void LoadLevel()
-    {
-        StartCoroutine(LoadAsynchronously("MainMenu"));
-    }
     IEnumerator LoadLevelDelay(string sceneName, float delayTime)
     {
         yield return new WaitForSeconds(delayTime);
-        //You can then put your code below
-        //......your code
         StartCoroutine(LoadAsynchronously(sceneName));
     }
 
