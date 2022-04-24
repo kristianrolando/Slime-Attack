@@ -822,6 +822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingScreen: {fileID: 208952173}
   slider: {fileID: 343959450}
+  logo: {fileID: 131737883}
 --- !u!4 &1876941431
 Transform:
   m_ObjectHideFlags: 0

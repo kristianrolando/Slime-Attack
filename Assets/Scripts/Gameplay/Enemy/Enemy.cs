@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    float speed = 2.5f;
+    float speed = 3f;
     GameObject target;
     PlayerScore score;
     PlayerHealth health;
@@ -37,6 +37,7 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, direction, speed * Time.deltaTime);
+        transform.Rotate(0, 0, 360 * 1 * Time.deltaTime);
     }
     public void GotDamage()
     {

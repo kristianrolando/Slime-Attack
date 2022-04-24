@@ -8,6 +8,7 @@ public class LevelLoader : MonoBehaviour
 {
     public GameObject loadingScreen;
     public Slider slider;
+    public GameObject logo;
 
     private void Start()
     {
@@ -24,6 +25,7 @@ public class LevelLoader : MonoBehaviour
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
 
+        logo.SetActive(false);
         loadingScreen.SetActive(true);
 
         while(!operation.isDone)

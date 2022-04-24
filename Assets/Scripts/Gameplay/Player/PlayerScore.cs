@@ -5,30 +5,32 @@ using UnityEngine.UI;
 
 public class PlayerScore : MonoBehaviour
 {
-    // public Text scoreText;
-
-    [HideInInspector] public int score;
-
+    [HideInInspector] public int scoreCoin;
+    [HideInInspector] public int scorePoint;
 
     public Text pointText;
     public Text coinText;
-    public Text finalScoreText;
+    public Text finalPointText;
 
     private void Start()
     {
-        score = 0;
+        scoreCoin = PlayerPrefs.GetInt("coin");
+        scorePoint = 0;
     }
 
     private void Update()
     {
-        pointText.text = "Point : " + score;
-        coinText.text = "Coin : " + score;
-        finalScoreText.text = "" + score;
+        pointText.text = "" + scorePoint;
+        coinText.text = "" + scoreCoin;
+        finalPointText.text = "" + scorePoint;
     }
     
-    public void scoreIncrement(int point)
+    public void scoreIncrement(int value)
     {
-        score = score + point;
+        scorePoint = scorePoint + value;
+        scoreCoin = scoreCoin + value;
     }
+
+
 
 }

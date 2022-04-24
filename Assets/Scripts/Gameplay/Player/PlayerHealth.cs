@@ -16,25 +16,40 @@ public class PlayerHealth : MonoBehaviour
     public HealthBar healthBar;
     public GameObject gameOver;
 
+    bool isDie;
     int currentHealth;
     Animator anim;
+    PlayerScore point, coin;
+    DataManager data;
 
     private void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         anim = GetComponent<Animator>();
+        point = GetComponent<PlayerScore>();
+        coin = GetComponent<PlayerScore>();
+        data = GetComponent<DataManager>();
+        isDie = false;
+
     }
     private void Update()
     {
+        // decrease health
         if(currentHealth >=  maxHealth)
         {
             currentHealth = maxHealth;
         }
-        if(currentHealth <=0)
+        if(currentHealth <=0 && !isDie)
         {
+            // die
+            anim.SetTrigger("death");
             gameOver.SetActive(true);
+            // save data
+            data.SetTotalCoin(coin.scoreCoin);
+            data.SortingPoint(point.scorePoint);
             Time.timeScale = 0f;
+            isDie = true;
         }
     }
 
@@ -42,7 +57,6 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.gameObject.tag == "Wood" )
         {
-            
             TakeDamage(damageWood);
             anim.SetTrigger("hurt");
         }else if (collision.gameObject.tag == "Rock" )
@@ -67,11 +81,5 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
-        if (currentHealth == 0)
-        {
-            anim.SetTrigger("death");
-            // menu die;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
     }
 }
