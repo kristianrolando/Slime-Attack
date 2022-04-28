@@ -99,7 +99,7 @@ MonoBehaviour:
   currentlyLifeWood: 0
   maxLifeRock: 1
   currentlyLifeRock: 0
-  maxLifeMagmaRock: 1
+  maxLifeMagmaRock: 3
   currentlyLifeMagmaRock: 0
   maxLifeHearth: 1
   currentlyLifeHeart: 0

@@ -11,16 +11,15 @@ public class Enemy : MonoBehaviour
     Vector2 direction;
 
     public int maxLifeWood = 1;
-    public int currentlyLifeWood;
+    int currentlyLifeWood;
     public int maxLifeRock = 1;
-    public int currentlyLifeRock;
-    public int maxLifeMagmaRock = 1;
-    public int currentlyLifeMagmaRock;
+    int currentlyLifeRock;
+    public int maxLifeMagmaRock = 3;
+    int currentlyLifeMagmaRock;
     public int maxLifeHearth = 1;
-    public int currentlyLifeHeart;
+    int currentlyLifeHeart;
 
-    // bool isSlow;
-    // [Range(0.01f,1f)] public float slowTime = 0.3f;
+
     private void Start()
     {
         target = GameObject.Find("Player");
@@ -38,6 +37,7 @@ public class Enemy : MonoBehaviour
     {
         transform.position = Vector2.MoveTowards(transform.position, direction, speed * Time.deltaTime);
         transform.Rotate(0, 0, 360 * 1 * Time.deltaTime);
+
     }
     public void GotDamage()
     {
@@ -67,6 +67,11 @@ public class Enemy : MonoBehaviour
                 score.scoreIncrement(3);
                 SelfDestruct();
             }
+            else if (currentlyLifeHeart < maxLifeMagmaRock)
+            {
+                Time.timeScale = 0.3f;
+                Invoke("SlowDown", 2f);
+            }
         }
         else if(gameObject.tag == "Heart")
         {
@@ -78,9 +83,16 @@ public class Enemy : MonoBehaviour
             }
         }
     }
-   
+
+    void SlowDown()
+    {
+        Time.timeScale = 1f;
+    }
+
     public void SelfDestruct()
     {
+        if (gameObject.tag == "Magma Rock")
+            Time.timeScale = 1f;
         Destroy(gameObject);
     }
 

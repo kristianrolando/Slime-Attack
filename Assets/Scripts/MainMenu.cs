@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private Text textCoin;
-    [SerializeField] private Text[] textPoint = new Text[5];
+    [SerializeField] Text textCoin;
+    [SerializeField] Text[] textPoint = new Text[5];
 
 
     private void Update()

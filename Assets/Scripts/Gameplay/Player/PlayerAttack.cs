@@ -6,29 +6,24 @@ using UnityEngine.SceneManagement;
 
 public class PlayerAttack : MonoBehaviour
 {
-
     float time;
-    [SerializeField] private float timeBetweenAttack = 0.1f;
+    [SerializeField] float timeBetweenAttack = 0.01f;
+    
+    [SerializeField] Transform attackPosRight;
+    [SerializeField] Transform attackPosLeft;
 
-    [SerializeField] private Transform attackPosRight;
-    [SerializeField] private Transform attackPosLeft;
+    [SerializeField] float attackRangeRight;
+    [SerializeField] float attackRangeLeft;
+    [SerializeField] LayerMask isEnemies;
 
-    [SerializeField] private float attackRangeRight;
-    [SerializeField] private float attackRangeLeft;
-    [SerializeField] private LayerMask isEnemies;
-
-    PlayerHealth playerHealth;
     Animator anim;
     SpriteRenderer sprite;
-    
-    PlayerScore score;
+   
 
     private void Start()
     {
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
-        score = GetComponent<PlayerScore>();
-        playerHealth = GetComponent<PlayerHealth>();
 
         Time.timeScale = 1f;
     }

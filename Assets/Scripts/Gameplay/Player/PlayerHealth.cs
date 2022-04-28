@@ -7,11 +7,11 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
 
-    [SerializeField] private int maxHealth = 100;
-    [SerializeField] private int damageWood = 10;
-    [SerializeField] private int damageRock = 25;
-    [SerializeField] private int damageMagmaRock = 35;
-    [SerializeField] private int healthRecover = 40;
+    [SerializeField] int maxHealth = 100;
+    [SerializeField] int damageWood = 10;
+    [SerializeField] int damageRock = 25;
+    [SerializeField] int damageMagmaRock = 35;
+    [SerializeField] int healthRecover = 40;
 
     public HealthBar healthBar;
     public GameObject gameOver;

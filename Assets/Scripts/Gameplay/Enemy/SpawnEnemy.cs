@@ -8,6 +8,8 @@ public class SpawnEnemy : MonoBehaviour
     [SerializeField] Transform[] spawnPoint;
     [SerializeField] float timeSpawn = 2f;
     float time = 0;
+
+
     private void Update()
     {
         int ranPoint = Random.Range(0, spawnPoint.Length);
