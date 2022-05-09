@@ -2448,9 +2448,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 9102724602065698578, guid: ebdd5b9e87eb35b42ab8ed755fbf2c61, type: 3}
-  - {fileID: 6208047120364760769, guid: b670c253d5b21d549930119c77a1a202, type: 3}
-  - {fileID: 8104346738393341254, guid: f93de064481a7574ebdb065e4af86250, type: 3}
   - {fileID: 2972308169659290779, guid: 52ecc472256664648a528d82d57f1f7b, type: 3}
+  - {fileID: 8104346738393341254, guid: f93de064481a7574ebdb065e4af86250, type: 3}
+  - {fileID: 6208047120364760769, guid: b670c253d5b21d549930119c77a1a202, type: 3}
   spawnPoint:
   - {fileID: 1586181006}
   - {fileID: 1365286073}
@@ -2648,7 +2648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8defafd93d4b2b74fb10686261b6deae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 999999
+  maxHealth: 200
   damageWood: 10
   damageRock: 25
   damageMagmaRock: 40
