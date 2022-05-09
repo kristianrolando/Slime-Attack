@@ -25,10 +25,10 @@ public class PlayerScore : MonoBehaviour
         finalPointText.text = "" + scorePoint;
     }
     
-    public void scoreIncrement(int value)
+    public void ScoreIncrement(int value)
     {
-        scorePoint = scorePoint + value;
-        scoreCoin = scoreCoin + value;
+        scorePoint += value;
+        scoreCoin += value;
     }
 
 

@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     PlayerScore score;
     PlayerHealth health;
     Vector2 direction;
+    GameManager gm;
 
     public int maxLifeWood = 1;
     int currentlyLifeWood;
@@ -22,6 +23,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        gm = GameObject.Find("Player").GetComponent<GameManager>();
         target = GameObject.Find("Player");
         score = GameObject.Find("Player").GetComponent<PlayerScore>();
         health = GameObject.Find("Player").GetComponent<PlayerHealth>();
@@ -35,6 +37,7 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        speed = gm.SpeedEnemy;
         transform.position = Vector2.MoveTowards(transform.position, direction, speed * Time.deltaTime);
         transform.Rotate(0, 0, 360 * 1 * Time.deltaTime);
 
@@ -46,7 +49,7 @@ public class Enemy : MonoBehaviour
             currentlyLifeWood -= 1;
             if (currentlyLifeWood <= 0)
             {
-                score.scoreIncrement(1);
+                score.ScoreIncrement(1);
                 SelfDestruct();
             }
         }
@@ -55,7 +58,7 @@ public class Enemy : MonoBehaviour
             currentlyLifeRock -= 1;
             if (currentlyLifeRock <= 0)
             {
-                score.scoreIncrement(1);
+                score.ScoreIncrement(1);
                 SelfDestruct();
             }
         }
@@ -64,13 +67,13 @@ public class Enemy : MonoBehaviour
             currentlyLifeMagmaRock -= 1;
             if (currentlyLifeMagmaRock <= 0)
             {
-                score.scoreIncrement(3);
+                score.ScoreIncrement(3);
                 SelfDestruct();
             }
             else if (currentlyLifeHeart < maxLifeMagmaRock)
             {
                 Time.timeScale = 0.3f;
-                Invoke("SlowDown", 2f);
+                Invoke("NormalizeTime", 2f);
             }
         }
         else if(gameObject.tag == "Heart")
@@ -84,7 +87,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void SlowDown()
+    void NormalizeTime()
     {
         Time.timeScale = 1f;
     }
