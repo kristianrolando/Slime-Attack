@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
     {
         Difficulty();
     }
-
     void Difficulty()
     {
         if (score.scorePoint != tempScore)

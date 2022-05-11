@@ -14,7 +14,7 @@ public class PlayerScore : MonoBehaviour
 
     private void Start()
     {
-        scoreCoin = PlayerPrefs.GetInt("coin");
+        scoreCoin = 0;
         scorePoint = 0;
     }
 

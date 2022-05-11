@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DataManager : MonoBehaviour
 {
-
     public List<int> pointRank; 
 
     private void Start()
