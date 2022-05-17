@@ -18,7 +18,6 @@ public class PlayerAttack : MonoBehaviour
 
     Animator anim;
     SpriteRenderer sprite;
-   
 
     private void Start()
     {
@@ -38,6 +37,22 @@ public class PlayerAttack : MonoBehaviour
     {
         if (time <= 0)
         {
+            int i = 0;
+            while (i < Input.touchCount)
+            {
+                Touch touch = Input.GetTouch(i);
+                Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+                if (touchPosition.x < 0)
+                {
+                    AttackLeft();
+                }
+                else
+                {
+                    AttackRight();
+                }
+                i++;
+            }
+            /*
             if (Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
@@ -47,6 +62,7 @@ public class PlayerAttack : MonoBehaviour
                 else
                     AttackRight();
             }
+            */
             time = timeBetweenAttack;
         }
         else

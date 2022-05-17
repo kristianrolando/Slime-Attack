@@ -36,7 +36,7 @@ public class PlayerHealth : MonoBehaviour
     private void Update()
     {
         // decrease health
-        if(currentHealth >=  maxHealth)
+        if (currentHealth >=  maxHealth)
         {
             currentHealth = maxHealth;
         }
@@ -55,20 +55,23 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Wood" )
+        if (collision.gameObject.tag == "Wood")
         {
             TakeDamage(damageWood);
             anim.SetTrigger("hurt");
-        }else if (collision.gameObject.tag == "Rock" )
+        }
+        else if (collision.gameObject.tag == "Rock")
         {
             TakeDamage(damageRock);
             anim.SetTrigger("hurt");
         }
-        else if(collision.gameObject.tag == "Magma Rock")
+        else if (collision.gameObject.tag == "Magma Rock")
         {
             TakeDamage(damageMagmaRock);
             anim.SetTrigger("hurt");
         }
+        else if (collision.gameObject.tag == "Heart")
+            healthRecovery();
     }
     public void healthRecovery()
     {

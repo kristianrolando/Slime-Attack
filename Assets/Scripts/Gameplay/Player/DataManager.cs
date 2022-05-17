@@ -36,4 +36,5 @@ public class DataManager : MonoBehaviour
         PlayerPrefs.SetInt("point4", pointRank[3]);
         PlayerPrefs.SetInt("point5", pointRank[4]);
     }
+
 }
