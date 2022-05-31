@@ -11,15 +11,10 @@ public class Enemy : MonoBehaviour
     Vector2 direction;
     GameManager gm;
 
-    public int maxLifeWood = 1;
     int currentlyLifeWood;
-    public int maxLifeRock = 1;
     int currentlyLifeRock;
-    public int maxLifeMagmaRock = 3;
     int currentlyLifeMagmaRock;
-    public int maxLifeHearth = 1;
     int currentlyLifeHeart;
-
 
     private void Start()
     {
@@ -29,10 +24,10 @@ public class Enemy : MonoBehaviour
         health = GameObject.Find("Player").GetComponent<PlayerHealth>();
         direction = target.transform.position + new Vector3(0f, 0.5f, 0f);
 
-        currentlyLifeWood = maxLifeWood;
-        currentlyLifeRock = maxLifeRock;
-        currentlyLifeMagmaRock = maxLifeMagmaRock;
-        currentlyLifeHeart = maxLifeHearth;
+        currentlyLifeWood = gm.maxLifeWood;
+        currentlyLifeRock = gm.maxLifeRock;
+        currentlyLifeMagmaRock = gm.maxLifeMagmaRock;
+        currentlyLifeHeart = gm.maxLifeHearth;
     }
 
     private void Update()
@@ -70,7 +65,7 @@ public class Enemy : MonoBehaviour
                 score.ScoreIncrement(3);
                 SelfDestruct();
             }
-            else if (currentlyLifeHeart < maxLifeMagmaRock)
+            else if (currentlyLifeHeart < gm.maxLifeMagmaRock)
             {
                 Time.timeScale = 0.3f;
                 Invoke("NormalizeTime", 2f);

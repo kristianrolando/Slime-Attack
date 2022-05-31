@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerScore : MonoBehaviour
 {
     [HideInInspector] public int scoreCoin;
     [HideInInspector] public int scorePoint;
 
-    public Text pointText;
-    public Text coinText;
-    public Text finalPointText;
+    public TextMeshProUGUI pointText;
+    public TextMeshProUGUI coinText;
+    public TextMeshProUGUI finalPointText;
 
     private void Start()
     {
@@ -20,8 +21,8 @@ public class PlayerScore : MonoBehaviour
 
     private void Update()
     {
-        pointText.text = "" + scorePoint;
-        coinText.text = "" + scoreCoin;
+        pointText.text = scorePoint.ToString();
+        coinText.text = scoreCoin.ToString();
         finalPointText.text = "" + scorePoint;
     }
     
@@ -34,3 +35,4 @@ public class PlayerScore : MonoBehaviour
 
 
 }
+ 

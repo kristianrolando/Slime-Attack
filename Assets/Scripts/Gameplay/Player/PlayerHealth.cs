@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
 
     public HealthBar healthBar;
     public GameObject gameOver;
+    public GameObject cover;
 
     bool isDie;
     int currentHealth;
@@ -45,6 +46,7 @@ public class PlayerHealth : MonoBehaviour
             // die
             anim.SetTrigger("death");
             gameOver.SetActive(true);
+            cover.SetActive(true);
             // save data
             data.SetTotalCoin(coin.scoreCoin);
             data.SortingPoint(point.scorePoint);

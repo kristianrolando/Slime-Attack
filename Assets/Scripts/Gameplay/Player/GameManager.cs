@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    //Set Enemy Stat
+    public int maxLifeWood = 1;
+    public int maxLifeRock = 1;
+    public int maxLifeMagmaRock = 3;
+    public int maxLifeHearth = 1;
+
+
     [SerializeField, Range(1, 100)] int increaseSpeed = 25;
 
     public float SpeedEnemy = 3f;

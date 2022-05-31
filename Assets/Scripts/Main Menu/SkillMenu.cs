@@ -5,64 +5,56 @@ using UnityEngine.UI;
 
 public class SkillMenu : MonoBehaviour
 {
-    public bool[] isEquipped = new bool[4];
-    public Text[] statusSkill = new Text[4];
-    public int maxSkill = 4; // max skill got carried
+    public GameObject popUpMessage;
 
-    [HideInInspector] public int slotCapacity = 0;
-    private void Start()
+    public Sprite equipped, equip;
+    public bool[] isEquipped;
+    public Image[] sprites;
+
+    int maxSkill = 2;
+    int capacity;
+
+    public void Equip(int index)
     {
-        ReturnDataSkill();
-    }
-
-    private void Update()
-    {
-        // false
-        if(!isEquipped[0])
+        if(!isEquipped[index])
         {
-            statusSkill[0].text = "Equip";
-        }
-        if (!isEquipped[1])
+            if(capacity >= maxSkill)
+                Instantiate(popUpMessage, transform.position, Quaternion.identity);
+            else if (capacity < maxSkill)
+            {
+                sprites[index].sprite = equipped;
+                isEquipped[index] = true;
+                SetSkill(index);
+                capacity++;
+            }  
+        }else if(isEquipped[index])
         {
-            statusSkill[1].text = "Equip";
-        }
-        if (!isEquipped[2])
-        {
-            statusSkill[2].text = "Equip";
-        }
-        if (!isEquipped[3])
-        {
-            statusSkill[3].text = "Equip";
-        }
-
-        // true
-        if (isEquipped[0])
-        {
-            statusSkill[0].text = "Equipped";
-        }
-        if (isEquipped[1])
-        {
-            statusSkill[1].text = "Equipped";
-        }
-        if (isEquipped[2])
-        {
-            statusSkill[2].text = "Equipped";
-        }
-        if (isEquipped[3])
-        {
-            statusSkill[3].text = "Equipped";
+            sprites[index].sprite = equip;
+            isEquipped[index] = false;
+            DeleteSkill(index);
+            capacity--;
         }
     }
-
-    void ReturnDataSkill()
+    void SetSkill(int skill)
     {
-        if(PlayerPrefs.GetInt("skill 1") != 0)
-            isEquipped[PlayerPrefs.GetInt("skill 1") - 1] = true;
-        if(PlayerPrefs.GetInt("skill 2") != 0)
-            isEquipped[PlayerPrefs.GetInt("skill 2") - 1] = true;
-        if (PlayerPrefs.GetInt("skill 3") != 0)
-            isEquipped[PlayerPrefs.GetInt("skill 3") - 1] = true;
-        if (PlayerPrefs.GetInt("skill 4") != 0)
-            isEquipped[PlayerPrefs.GetInt("skill 4") - 1] = true;
+        for (int i = 0; i < maxSkill; i++)
+        {
+            if (PlayerPrefs.GetInt("skill " + i+1) == 0)
+            {
+                PlayerPrefs.SetInt("skill " + i+1, skill);
+                break;
+            }
+        }
+    }
+    void DeleteSkill(int skill)
+    {
+        for (int i = 0; i < maxSkill; i++)
+        {
+            if (i == skill)
+            {
+                PlayerPrefs.SetInt("skill " + i+1, 0);
+                break;
+            }
+        }
     }
 }

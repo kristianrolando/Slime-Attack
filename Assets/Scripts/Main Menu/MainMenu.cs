@@ -3,22 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] Text textCoin;
-    [SerializeField] Text[] textPoint = new Text[5];
+    [SerializeField] private GameObject UISelectionMenu;
 
-
-    private void Update()
-    {
-        textCoin.text = PlayerPrefs.GetInt("coin").ToString();
-        textPoint[0].text = PlayerPrefs.GetInt("point1").ToString();
-        textPoint[1].text = PlayerPrefs.GetInt("point2").ToString();
-        textPoint[2].text = PlayerPrefs.GetInt("point3").ToString();
-        textPoint[3].text = PlayerPrefs.GetInt("point4").ToString();
-        textPoint[4].text = PlayerPrefs.GetInt("point5").ToString();
-    }
+    bool isMenuPressed;
 
     public void StartGame()
     {
@@ -28,8 +19,18 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
-    public void ClearData()
+    public void MenuSelection()
     {
-        PlayerPrefs.DeleteAll();
+        if(!isMenuPressed)
+        {
+            UISelectionMenu.SetActive(false);
+            isMenuPressed = true;
+        }
+        else
+        {
+            UISelectionMenu.SetActive(true);
+            isMenuPressed = false;
+        }
     }
 }
+

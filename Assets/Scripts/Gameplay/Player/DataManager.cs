@@ -8,11 +8,10 @@ public class DataManager : MonoBehaviour
 
     private void Start()
     {
-        pointRank.Add(PlayerPrefs.GetInt("point1", pointRank[0]));
-        pointRank.Add(PlayerPrefs.GetInt("point2", pointRank[1]));
-        pointRank.Add(PlayerPrefs.GetInt("point3", pointRank[2]));
-        pointRank.Add(PlayerPrefs.GetInt("point4", pointRank[3]));
-        pointRank.Add(PlayerPrefs.GetInt("point5", pointRank[4]));
+        for (int i = 0; i < 5; i++)
+        {
+            pointRank.Add(PlayerPrefs.GetInt("point" + i+1, pointRank[i]));
+        }
     }
 
     public void SetTotalCoin(int coin)
@@ -30,11 +29,10 @@ public class DataManager : MonoBehaviour
 
     void SetPointRank()
     {
-        PlayerPrefs.SetInt("point1", pointRank[0]);
-        PlayerPrefs.SetInt("point2", pointRank[1]);
-        PlayerPrefs.SetInt("point3", pointRank[2]);
-        PlayerPrefs.SetInt("point4", pointRank[3]);
-        PlayerPrefs.SetInt("point5", pointRank[4]);
+        for(int i = 0; i < 5;i++)
+        {
+            PlayerPrefs.SetInt("point" + i+1, pointRank[i]);
+        }  
     }
 
 }

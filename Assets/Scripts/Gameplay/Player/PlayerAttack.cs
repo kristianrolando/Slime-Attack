@@ -5,16 +5,15 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerAttack : MonoBehaviour
-{
-    float time;
-    [SerializeField] float timeBetweenAttack = 0.01f;
-    
+{   
     [SerializeField] Transform attackPosRight;
     [SerializeField] Transform attackPosLeft;
 
     [SerializeField] float attackRangeRight;
     [SerializeField] float attackRangeLeft;
     [SerializeField] LayerMask isEnemies;
+
+    [HideInInspector] public bool statEnimiesRight, statEnimiesLeft;
 
     Animator anim;
     SpriteRenderer sprite;
@@ -35,43 +34,23 @@ public class PlayerAttack : MonoBehaviour
 
     void Attack()
     {
-        if (time <= 0)
+        int i = 0;
+        while (i < Input.touchCount)
         {
-            int i = 0;
-            while (i < Input.touchCount)
+            Touch touch = Input.GetTouch(i);
+            Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+            if (touchPosition.x < 0)
             {
-                Touch touch = Input.GetTouch(i);
-                Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
-                if (touchPosition.x < 0)
-                {
-                    AttackLeft();
-                }
-                else
-                {
-                    AttackRight();
-                }
-                i++;
+                AttackLeft();
             }
-            /*
-            if (Input.touchCount > 0)
+            else
             {
-                Touch touch = Input.GetTouch(0);
-                Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
-                if (touchPosition.x < 0)
-                    AttackLeft();
-                else
-                    AttackRight();
+                AttackRight();
             }
-            */
-            time = timeBetweenAttack;
-        }
-        else
-        {
-            time -= Time.deltaTime;
+            i++;
         }
     }
 
-    [HideInInspector] public bool statEnimiesRight, statEnimiesLeft;
 
     void DetectionEnemies()
     {
