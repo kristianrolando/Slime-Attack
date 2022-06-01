@@ -8,30 +8,12 @@ public class LeaderboardMenu : MonoBehaviour
     public TextMeshProUGUI[] scoreText;
     public TextMeshProUGUI[] playerName;
 
-    int[] scoreLeaderboard;
-    string[] playerNameLeaderboard;
-
-
-
     void Start()
     {
-        LoadLeaderboardData();
-    }
-
-    void LoadLeaderboardData()
-    {
-        for (int i = 0; i < 10; i++)
+        for(int i = 0; i < 10; i++)
         {
-            scoreText[i].text = scoreLeaderboard[i].ToString();
-            playerName[i].text = playerNameLeaderboard[i];
+            scoreText[i].text = PlayerPrefs.GetInt("score " + i).ToString();
+            playerName[i].text = PlayerPrefs.GetString("namePlayer " + i).ToString();
         }
-    }
-    void SaveLeaderboardData()
-    {
-        for (int i = 0; i < 10; i++)
-        {
-            scoreLeaderboard[i] = int.Parse(scoreText[i].text);
-            playerNameLeaderboard[i] = playerName[i].text;
-        } 
     }
 }

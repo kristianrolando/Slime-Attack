@@ -8,7 +8,7 @@ public class PlayerDataManager : MonoBehaviour
     int[] scoreLeaderboard;
     string[] playerNameLeaderboard;
 
-    public static void GetLeaderboardData()
+    public void GetLeaderboardData()
     {
 
     }
@@ -19,6 +19,16 @@ public class PlayerDataManager : MonoBehaviour
 
         }
     }
+    #endregion
+
+    #region Skill
+    int[] skillEquipped;
+
+    #endregion
+
+    #region Item
+    int[] itemEquipped;
+
     #endregion
 
 

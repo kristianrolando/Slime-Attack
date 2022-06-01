@@ -18,6 +18,9 @@ public class PlayerAttack : MonoBehaviour
     Animator anim;
     SpriteRenderer sprite;
 
+    float time;
+    [SerializeField] float timeBetweenAttack = 0.01f;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -34,20 +37,39 @@ public class PlayerAttack : MonoBehaviour
 
     void Attack()
     {
-        int i = 0;
-        while (i < Input.touchCount)
+        if (time <= 0)
         {
-            Touch touch = Input.GetTouch(i);
-            Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
-            if (touchPosition.x < 0)
+            int i = 0;
+            while (i < Input.touchCount)
             {
-                AttackLeft();
+                Touch touch = Input.GetTouch(i);
+                Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+                if (touchPosition.x < 0)
+                {
+                    AttackLeft();
+                }
+                else
+                {
+                    AttackRight();
+                }
+                i++;
             }
-            else
+            /*
+            if (Input.touchCount > 0)
             {
-                AttackRight();
+                Touch touch = Input.GetTouch(0);
+                Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+                if (touchPosition.x < 0)
+                    AttackLeft();
+                else
+                    AttackRight();
             }
-            i++;
+            */
+            time = timeBetweenAttack;
+        }
+        else
+        {
+            time -= Time.deltaTime;
         }
     }
 

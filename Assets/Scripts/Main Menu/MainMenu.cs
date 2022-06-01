@@ -7,7 +7,6 @@ using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject UISelectionMenu;
 
     bool isMenuPressed;
 
@@ -19,16 +18,19 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public Animator animSelectionUI;
+
     public void MenuSelection()
     {
         if(!isMenuPressed)
         {
-            UISelectionMenu.SetActive(false);
+            animSelectionUI.SetTrigger("true");
             isMenuPressed = true;
         }
         else
         {
-            UISelectionMenu.SetActive(true);
+            animSelectionUI.SetTrigger("false");
             isMenuPressed = false;
         }
     }

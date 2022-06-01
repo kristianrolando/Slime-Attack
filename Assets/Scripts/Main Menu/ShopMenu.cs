@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ShopMenu : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class ShopMenu : MonoBehaviour
         ChangeColorSkill();
     }
 
+    #region Category Button
     public void ChangeColorSkill()
     {
         skill.color = color1;
@@ -29,5 +31,13 @@ public class ShopMenu : MonoBehaviour
         energy.color = color1;
         skill.color = color2;
         item.color = color2;
+    }
+    #endregion
+
+    public TextMeshProUGUI textDetails;
+
+    public void Details(string description)
+    {
+        textDetails.text = description;
     }
 }
