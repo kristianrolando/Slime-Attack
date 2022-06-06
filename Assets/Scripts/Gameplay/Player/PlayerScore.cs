@@ -32,6 +32,10 @@ public class PlayerScore : MonoBehaviour
         scoreCoin += value;
     }
 
+    public void SaveCoin()
+    {
+        PlayerPrefs.SetInt("coin", PlayerPrefs.GetInt("coin") + scoreCoin);
+    }
 
 
 }

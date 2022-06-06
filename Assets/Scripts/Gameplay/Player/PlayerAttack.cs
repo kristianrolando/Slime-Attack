@@ -45,14 +45,18 @@ public class PlayerAttack : MonoBehaviour
                 Touch touch = Input.GetTouch(i);
                 Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
                 if (touchPosition.x < 0)
-                {
                     AttackLeft();
-                }
                 else
-                {
                     AttackRight();
-                }
                 i++;
+            }
+            if(Input.GetMouseButtonDown(0))
+            {
+                Vector2 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                if (position.x < 0)
+                    AttackLeft();
+                else
+                    AttackRight();
             }
             /*
             if (Input.touchCount > 0)

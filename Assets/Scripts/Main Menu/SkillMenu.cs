@@ -13,25 +13,30 @@ public class SkillMenu : MonoBehaviour
 
     int maxSkill = 2;
     int capacity;
+    private void Update()
+    {
+        Locked();
+    }
 
+    #region  Equip Skill
     public void Equip(int index)
     {
-        if(!isEquipped[index])
+        if(!isEquipped[index-1])
         {
             if(capacity >= maxSkill)
                 Instantiate(popUpMessage, transform.position, Quaternion.identity);
             else if (capacity < maxSkill)
             {
-                sprites[index].sprite = equipped;
-                isEquipped[index] = true;
-                SetSkill(index);
+                sprites[index-1].sprite = equipped;
+                isEquipped[index-1] = true;
+                SetSkill(index-1);
                 capacity++;
             }  
-        }else if(isEquipped[index])
+        }else if(isEquipped[index-1])
         {
-            sprites[index].sprite = equip;
-            isEquipped[index] = false;
-            DeleteSkill(index);
+            sprites[index-1].sprite = equip;
+            isEquipped[index-1] = false;
+            DeleteSkill(index-1);
             capacity--;
         }
     }
@@ -39,9 +44,10 @@ public class SkillMenu : MonoBehaviour
     {
         for (int i = 0; i < maxSkill; i++)
         {
-            if (PlayerPrefs.GetInt("skill " + i+1) == 0)
+            int f = i + 1;
+            if (PlayerPrefs.GetInt("skill " + f) == 0)
             {
-                PlayerPrefs.SetInt("skill " + i+1, skill);
+                PlayerPrefs.SetInt("skill " + f, skill);
                 break;
             }
         }
@@ -52,9 +58,27 @@ public class SkillMenu : MonoBehaviour
         {
             if (i == skill)
             {
-                PlayerPrefs.SetInt("skill " + i+1, 0);
+                int f = i + 1;
+                PlayerPrefs.SetInt("skill " + f, 0);
                 break;
             }
         }
     }
+    #endregion
+
+    #region Locked
+    public GameObject[] lockSkill;
+
+    void Locked()
+    {
+        for (int i = 1; i <= 3; i++)
+        {
+            if (PlayerPrefs.GetInt("m_skill " + i) != 0)
+                lockSkill[PlayerPrefs.GetInt("m_skill " + i) - 1].SetActive(false);
+            if (PlayerPrefs.GetInt("m_skill " + i) == 0)
+                lockSkill[i - 1].SetActive(true);
+        }
+    }
+
+    #endregion
 }

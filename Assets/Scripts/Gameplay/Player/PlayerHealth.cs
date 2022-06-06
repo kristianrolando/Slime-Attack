@@ -20,14 +20,13 @@ public class PlayerHealth : MonoBehaviour
     bool isDie;
     int currentHealth;
     Animator anim;
-    PlayerScore point, coin;
+    PlayerScore coin;
 
     private void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         anim = GetComponent<Animator>();
-        point = GetComponent<PlayerScore>();
         coin = GetComponent<PlayerScore>();
         isDie = false;
 
@@ -46,7 +45,7 @@ public class PlayerHealth : MonoBehaviour
 
             gameOver.SetActive(true);
             cover.SetActive(true);
-
+            coin.SaveCoin();
             Time.timeScale = 0f;
             isDie = true;
         }

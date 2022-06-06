@@ -10,8 +10,8 @@ TagManager:
   - Wood
   - Heart
   - Terrain
-  - Equip
-  - Equipped
+  - Equip 1
+  - Equip 2
   layers:
   - Default
   - TransparentFX
