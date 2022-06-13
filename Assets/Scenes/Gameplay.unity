@@ -650,7 +650,7 @@ GameObject:
   - component: {fileID: 195529978}
   - component: {fileID: 195529977}
   m_Layer: 5
-  m_Name: Bar Button 1
+  m_Name: item Bar Button 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -718,7 +718,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 195529978}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1805975040}
+        m_MethodName: SkillButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &195529978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1168,7 +1179,7 @@ GameObject:
   - component: {fileID: 527655006}
   - component: {fileID: 527655005}
   m_Layer: 5
-  m_Name: Sprite
+  m_Name: icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1426,7 +1437,7 @@ GameObject:
   - component: {fileID: 658568716}
   - component: {fileID: 658568715}
   m_Layer: 5
-  m_Name: Bar Button 2
+  m_Name: item Bar Button 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1494,7 +1505,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 658568716}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1805975040}
+        m_MethodName: SkillButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &658568716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2119,7 +2141,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b78fbad4d880fb742b0ac6db2a059257, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dc8158db64b9e34458a1c7ffa9615b1f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2150,7 +2172,7 @@ GameObject:
   - component: {fileID: 1103501947}
   - component: {fileID: 1103501946}
   m_Layer: 5
-  m_Name: Bar Button 3
+  m_Name: item Bar Button 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2483,7 +2505,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 0
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 1, g: 0.95206225, b: 0, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2928,7 +2950,7 @@ GameObject:
   - component: {fileID: 1416023807}
   - component: {fileID: 1416023806}
   m_Layer: 5
-  m_Name: Sprite
+  m_Name: icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3267,7 +3289,7 @@ GameObject:
   - component: {fileID: 1547679760}
   - component: {fileID: 1547679759}
   m_Layer: 5
-  m_Name: Sprite
+  m_Name: icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3955,7 +3977,7 @@ GameObject:
   - component: {fileID: 1795596999}
   - component: {fileID: 1795596998}
   m_Layer: 5
-  m_Name: Sprite
+  m_Name: icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4026,6 +4048,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1805975039}
+  - component: {fileID: 1805975040}
   m_Layer: 5
   m_Name: Item Bar
   m_TagString: Untagged
@@ -4056,6 +4079,34 @@ RectTransform:
   m_AnchoredPosition: {x: -813, y: 100}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1805975040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805975038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d71337a8ea5f92849a5a276aa2d0a5ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconImage:
+  - {fileID: 1547679759}
+  - {fileID: 1795596998}
+  - {fileID: 1416023806}
+  - {fileID: 527655005}
+  iconSkill:
+  - {fileID: 21300000, guid: decac2d0acab7324da37d384093890f3, type: 3}
+  - {fileID: 21300000, guid: ec531f49faa323247ac9fd83645bc34c, type: 3}
+  - {fileID: 21300000, guid: 444827040551e2c40b23c3bec4918a52, type: 3}
+  iconItem:
+  - {fileID: 21300000, guid: 49518428390c7e1468978cb423db8196, type: 3}
+  - {fileID: 21300000, guid: b4d724ba29d16d6479b4442a26aa8076, type: 3}
+  - {fileID: 21300000, guid: 79587a9618e31904b958c95f488e60da, type: 3}
+  - {fileID: 21300000, guid: d35be29026947cd498fcab4c6ae193d2, type: 3}
+  - {fileID: 21300000, guid: adc52f58feda00e4391bfcb45e136c9e, type: 3}
+  - {fileID: 21300000, guid: e5f2814e390d7274f8700cc37745a612, type: 3}
 --- !u!1 &1806334208
 GameObject:
   m_ObjectHideFlags: 0
@@ -4233,7 +4284,7 @@ MonoBehaviour:
     m_Bits: 256
   statEnimiesRight: 0
   statEnimiesLeft: 0
-  timeBetweenAttack: 0.01
+  timeBetweenAttack: 0.17
 --- !u!114 &1806334215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4246,9 +4297,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8defafd93d4b2b74fb10686261b6deae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 100
   damageWood: 10
-  damageRock: 25
+  damageRock: 20
   damageMagmaRock: 40
   healthRecover: 40
   healthBar: {fileID: 1129027771}
@@ -4489,7 +4540,7 @@ GameObject:
   - component: {fileID: 2002827965}
   - component: {fileID: 2002827964}
   m_Layer: 5
-  m_Name: Bar Button 4
+  m_Name: item Bar Button 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4795,18 +4846,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93725497, g: 0.058823533, b: 0.11764707, a: 1}
+  m_Color: {r: 1, g: 0.09517647, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: d4b6ad5ccf85fab43a4710a222e52912, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 0.53
+  m_FillMethod: 0
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0

@@ -19,7 +19,7 @@ public class PlayerAttack : MonoBehaviour
     SpriteRenderer sprite;
 
     float time;
-    [SerializeField] float timeBetweenAttack = 0.01f;
+    [SerializeField] float timeBetweenAttack = 0.3f;
 
     private void Start()
     {
@@ -38,19 +38,18 @@ public class PlayerAttack : MonoBehaviour
     void Attack()
     {
         if (time <= 0)
-        {
-            int i = 0;
-            while (i < Input.touchCount)
+        { 
+            if (Input.touchCount > 0)
             {
-                Touch touch = Input.GetTouch(i);
+                Touch touch = Input.GetTouch(0);
                 Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
                 if (touchPosition.x < 0)
                     AttackLeft();
                 else
                     AttackRight();
-                i++;
             }
-            if(Input.GetMouseButtonDown(0))
+            /*
+            if (Input.GetMouseButtonDown(0))
             {
                 Vector2 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 if (position.x < 0)

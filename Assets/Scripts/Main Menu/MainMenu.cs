@@ -7,12 +7,16 @@ using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
-
+    public EnergySystem energy;
     bool isMenuPressed;
+    private void Start()
+    {
+        PlayerPrefs.SetInt("coin", 500);
+    }
 
     public void StartGame()
     {
-        SceneManager.LoadScene("GamePlay");
+        energy.UseEnergy();
     }
     public void QuitFromApp()
     {

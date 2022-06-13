@@ -103,7 +103,6 @@ public class GameOver : MonoBehaviour
                     tempName = nameRank[i];
                     nameRank[i] = nameRank[j];
                     nameRank[j] = tempName;
-                    Debug.Log("i " + i + "j " + j);
                 }
             }
         }

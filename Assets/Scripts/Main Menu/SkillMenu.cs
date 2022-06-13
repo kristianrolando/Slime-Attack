@@ -13,6 +13,10 @@ public class SkillMenu : MonoBehaviour
 
     int maxSkill = 2;
     int capacity;
+    private void Start()
+    {
+        LoadSkill();
+    }
     private void Update()
     {
         Locked();
@@ -78,6 +82,20 @@ public class SkillMenu : MonoBehaviour
             if (PlayerPrefs.GetInt("m_skill " + i) == 0)
                 lockSkill[i - 1].SetActive(true);
         }
+    }
+
+    void LoadSkill()
+    {
+        for (int i = 1; i < 4; i++)
+        {
+            if (PlayerPrefs.GetInt("skill " + i) != 0 )
+            {
+                isEquipped[PlayerPrefs.GetInt("skill " + i) - 1] = true;
+                sprites[PlayerPrefs.GetInt("skill " + i) - 1].sprite = equipped;
+                capacity++;
+            }
+        }
+
     }
 
     #endregion
