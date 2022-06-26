@@ -39,13 +39,16 @@ public class ItemBar : MonoBehaviour
 
     #region Skill
 
+    [HideInInspector] public bool isSkill;
+    [HideInInspector] public bool isSkillGreed;
+
     public void SkillButton(int index)
     {
         int i =  PlayerPrefs.GetInt("skill " + index);
         switch(i)
         {
             case 1:
-                Greed();
+                GreedTrue();
                 break;
             case 2:
                 DoublePunch();
@@ -56,9 +59,14 @@ public class ItemBar : MonoBehaviour
         }
     }
 
-    void Greed()
+    public void GreedTrue()
     {
-
+        isSkillGreed = true;
+        Invoke(nameof(GreedFalse), 7f);
+    }
+    void GreedFalse()
+    {
+        isSkillGreed = false;
     }
     void DoublePunch()
     {

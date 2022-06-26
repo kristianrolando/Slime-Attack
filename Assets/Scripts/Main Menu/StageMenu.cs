@@ -5,23 +5,50 @@ using UnityEngine.UI;
 
 public class StageMenu : MonoBehaviour
 {
-    public Sprite select;
-    public Sprite selected;
-    public Image[] sprite;
 
-    public bool[] isSelected;
+    [SerializeField] Sprite select, selected;
+    [SerializeField] Image[] sprite;
+    [SerializeField] bool[] isSelected;
 
-    public void Select(int i)
+    private void Start()
     {
-        if(!isSelected[i])
+        if(PlayerPrefs.HasKey("stage"))
         {
-            sprite[i].sprite = selected;
-            isSelected[i] = true;
+            LoadStageSelected();
         }
         else
         {
-            sprite[i].sprite = select;
-            isSelected[i] = false;
+            Select(1);
+        }
+    }
+
+    public void Select(int i)
+    {
+        if(!isSelected[i-1])
+        {
+            for(int j = 0; j < sprite.Length; j++)
+            {
+                sprite[j].sprite = select;
+                isSelected[j] = false;
+            }
+            sprite[i-1].sprite = selected;
+            isSelected[i-1] = true;
+            PlayerPrefs.SetInt("stage", i);
+        }
+    }
+
+
+    void LoadStageSelected()
+    {
+        for (int j = 0; j < sprite.Length; j++)
+        {
+            sprite[j].sprite = select;
+            isSelected[j] = false;
+            if(j+1 == PlayerPrefs.GetInt("stage"))
+            {
+                sprite[j].sprite = selected;
+                isSelected[j] = true;
+            }
         }
     }
 

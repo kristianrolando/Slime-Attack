@@ -33,37 +33,35 @@ public class SkillMenu : MonoBehaviour
             {
                 sprites[index-1].sprite = equipped;
                 isEquipped[index-1] = true;
-                SetSkill(index-1);
+                SetSkill(index);
                 capacity++;
             }  
         }else if(isEquipped[index-1])
         {
             sprites[index-1].sprite = equip;
             isEquipped[index-1] = false;
-            DeleteSkill(index-1);
+            DeleteSkill(index);
             capacity--;
         }
     }
     void SetSkill(int skill)
     {
-        for (int i = 0; i < maxSkill; i++)
+        for (int i = 1; i <= maxSkill; i++)
         {
-            int f = i + 1;
-            if (PlayerPrefs.GetInt("skill " + f) == 0)
+            if (PlayerPrefs.GetInt("skill " + i) == 0)
             {
-                PlayerPrefs.SetInt("skill " + f, skill);
+                PlayerPrefs.SetInt("skill " + i, skill);
                 break;
             }
         }
     }
     void DeleteSkill(int skill)
     {
-        for (int i = 0; i < maxSkill; i++)
+        for (int i = 1; i <= maxSkill; i++)
         {
             if (i == skill)
             {
-                int f = i + 1;
-                PlayerPrefs.SetInt("skill " + f, 0);
+                PlayerPrefs.SetInt("skill " + i, 0);
                 break;
             }
         }

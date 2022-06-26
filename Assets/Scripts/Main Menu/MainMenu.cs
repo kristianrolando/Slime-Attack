@@ -7,16 +7,13 @@ using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
-    public EnergySystem energy;
+    [SerializeField] EnergySystem energy;
     bool isMenuPressed;
-    private void Start()
-    {
-        PlayerPrefs.SetInt("coin", 500);
-    }
-
+ 
     public void StartGame()
     {
         energy.UseEnergy();
+        
     }
     public void QuitFromApp()
     {

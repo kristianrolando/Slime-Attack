@@ -6,11 +6,15 @@ using TMPro;
 
 public class ShopMenu : MonoBehaviour
 {
-    public Color color1, color2;
-    public Image skill, item, energy;
+    [SerializeField] Color color1, color2;
+    [SerializeField] Image skill, item, energy;
+
+    [SerializeField] GameObject skillSelection, itemSelection, energySelection;
+
     private void Start()
     {
         ChangeColorSkill();
+        CloseSelectionMenu();
     }
     private void Update()
     {
@@ -37,6 +41,14 @@ public class ShopMenu : MonoBehaviour
                 lockItem[i - 1].SetActive(false);
         }
     }
+    
+    void CloseSelectionMenu()
+    {
+        skillSelection.SetActive(true);
+        itemSelection.SetActive(false);
+        energySelection.SetActive(false);
+    }
+
 
     #region Category Button
     public void ChangeColorSkill()

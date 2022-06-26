@@ -10,8 +10,7 @@ TagManager:
   - Wood
   - Heart
   - Terrain
-  - Equip 1
-  - Equip 2
+  - Greed
   layers:
   - Default
   - TransparentFX

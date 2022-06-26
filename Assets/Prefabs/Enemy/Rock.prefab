@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5829323677195253711}
   - component: {fileID: 6942020576680250958}
   - component: {fileID: 6860999479661445066}
-  - component: {fileID: 5637573147240706358}
+  - component: {fileID: 4527554240277479127}
   m_Layer: 8
   m_Name: Rock
   m_TagString: Rock
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 797dabf0cab18514496b28fe600f15bf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cbdd0b9e1e614dc45829775b72924209, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,16 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d698f99ed9b164bac1e6b978236afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLifeWood: 1
-  currentlyLifeWood: 0
-  maxLifeRock: 1
-  currentlyLifeRock: 0
-  maxLifeMagmaRock: 3
-  currentlyLifeMagmaRock: 0
-  maxLifeHearth: 1
-  currentlyLifeHeart: 0
---- !u!58 &5637573147240706358
-CircleCollider2D:
+--- !u!60 &4527554240277479127
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -116,6 +108,66 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.09, y: 0.08}
-  serializedVersion: 2
-  m_Radius: 0.69
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.4913044, y: 1.726087}
+    newSize: {x: 2.5, y: 2.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.38043475, y: -0.59782606}
+      - {x: 0.44565216, y: -0.5630435}
+      - {x: 0.4717391, y: -0.54130435}
+      - {x: 0.51086956, y: -0.46304345}
+      - {x: 0.5065217, y: -0.45434782}
+      - {x: 0.54999995, y: -0.38043475}
+      - {x: 0.65869564, y: -0.15869564}
+      - {x: 0.697826, y: -0.07608695}
+      - {x: 0.723913, y: -0.015217391}
+      - {x: 0.723913, y: 0.0108695645}
+      - {x: 0.71521735, y: 0.041304346}
+      - {x: 0.6717391, y: 0.13695651}
+      - {x: 0.6369565, y: 0.21086955}
+      - {x: 0.5717391, y: 0.33260867}
+      - {x: 0.5630435, y: 0.34130433}
+      - {x: 0.48043478, y: 0.51086956}
+      - {x: 0.45434782, y: 0.5326087}
+      - {x: 0.27173913, y: 0.6717391}
+      - {x: 0.21956521, y: 0.7065217}
+      - {x: 0.1326087, y: 0.76304346}
+      - {x: 0.07173913, y: 0.8108695}
+      - {x: 0.023913043, y: 0.8369565}
+      - {x: -0.002173913, y: 0.8369565}
+      - {x: -0.045652173, y: 0.8195652}
+      - {x: -0.15869564, y: 0.77173907}
+      - {x: -0.24565217, y: 0.7282608}
+      - {x: -0.34565216, y: 0.6760869}
+      - {x: -0.41086954, y: 0.6369565}
+      - {x: -0.48478258, y: 0.5847826}
+      - {x: -0.5847826, y: 0.5326087}
+      - {x: -0.6152174, y: 0.49347824}
+      - {x: -0.7065217, y: 0.27173913}
+      - {x: -0.7195652, y: 0.23260869}
+      - {x: -0.7282608, y: 0.21086955}
+      - {x: -0.7282608, y: 0.16304347}
+      - {x: -0.723913, y: 0.11521739}
+      - {x: -0.7195652, y: 0.019565217}
+      - {x: -0.71521735, y: -0.0673913}
+      - {x: -0.7065217, y: -0.21086955}
+      - {x: -0.6891304, y: -0.45434782}
+      - {x: -0.59782606, y: -0.5369565}
+      - {x: -0.5543478, y: -0.5673913}
+      - {x: -0.45869562, y: -0.62826085}
+      - {x: -0.37608695, y: -0.68043476}
+      - {x: -0.18913043, y: -0.80217385}
+      - {x: -0.14999999, y: -0.82826084}
+      - {x: -0.12826087, y: -0.8369565}
+      - {x: -0.08478261, y: -0.8195652}
+      - {x: 0.08043478, y: -0.74999994}
+      - {x: 0.1326087, y: -0.723913}
+      - {x: 0.2369565, y: -0.6673913}

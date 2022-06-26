@@ -39,6 +39,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (time <= 0)
         { 
+            /*
             if (Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
@@ -48,7 +49,7 @@ public class PlayerAttack : MonoBehaviour
                 else
                     AttackRight();
             }
-            /*
+            */
             if (Input.GetMouseButtonDown(0))
             {
                 Vector2 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -97,7 +98,7 @@ public class PlayerAttack : MonoBehaviour
         Collider2D[] enemiesToDamageRight = Physics2D.OverlapCircleAll(attackPosRight.position, attackRangeRight, isEnemies);
         for (int i = 0; i < enemiesToDamageRight.Length; i++)
         {
-            RandomAttack();
+            anim.SetTrigger("punch");
             sprite.flipX = false;
             enemiesToDamageRight[i].GetComponent<Enemy>().GotDamage();
         }
@@ -108,26 +109,9 @@ public class PlayerAttack : MonoBehaviour
         Collider2D[] enemiesToDamageLeft = Physics2D.OverlapCircleAll(attackPosLeft.position, attackRangeLeft, isEnemies);
         for (int i = 0; i < enemiesToDamageLeft.Length; i++)
         {
-            RandomAttack();
+            anim.SetTrigger("punch");
             sprite.flipX = true;
             enemiesToDamageLeft[i].GetComponent<Enemy>().GotDamage();
-        }
-    }
-
-    void RandomAttack()
-    {
-        int randomAttack = Random.Range(1, 3);
-        switch (randomAttack)
-        {
-            case 1:
-                anim.SetTrigger("attack1");
-                break;
-            case 2:
-                anim.SetTrigger("attack2");
-                break;
-            default:
-                anim.SetTrigger("attack3");
-                break;
         }
     }
 

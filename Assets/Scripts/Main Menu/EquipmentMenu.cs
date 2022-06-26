@@ -8,18 +8,18 @@ using TMPro;
 public class EquipmentMenu : MonoBehaviour
 {
     // sesi 1
-    public bool[] isEquipped;
-    public Image[] imageEquipButton;
-    public Sprite equip, Equipped;
+    [SerializeField] bool[] isEquipped;
+    [SerializeField] Image[] imageEquipButton;
+    [SerializeField] Sprite equip, equipped;
 
-    public GameObject popUpMessage;
+    [SerializeField] GameObject popUpMessage;
 
-    public int maxItem = 2; 
+    [SerializeField] int maxItem = 2;
 
-    
     // sesi 2
-    public Image[] iconImage;
-    public Sprite[] itemIcon;
+    [SerializeField] Image[] iconImage;
+    [SerializeField] Sprite[] itemIcon;
+    [SerializeField] GameObject[] xButton; 
 
     private void Start()
     {
@@ -69,7 +69,7 @@ public class EquipmentMenu : MonoBehaviour
         if(isEquipped)
         {
             this.isEquipped[index - 1] = true;
-            imageEquipButton[index - 1].sprite = Equipped;
+            imageEquipButton[index - 1].sprite = equipped;
             if(PlayerPrefs.GetInt("item 1") == 0)
             {
                 ChangeIconImage(0, index, true);
@@ -117,6 +117,7 @@ public class EquipmentMenu : MonoBehaviour
                 int f = i + 1;
                 if (PlayerPrefs.GetInt("item " + f) == 0)
                 {
+                    xButton[i].SetActive(true);
                     PlayerPrefs.SetInt("item " + f, item);
                     break;
                 }
@@ -127,6 +128,7 @@ public class EquipmentMenu : MonoBehaviour
                 int f = i + 1;
                 if (PlayerPrefs.GetInt("item " + f) == item)
                 {
+                    xButton[i].SetActive(false);
                     PlayerPrefs.SetInt("item " + f, 0);
                     break;
                 }
@@ -145,19 +147,28 @@ public class EquipmentMenu : MonoBehaviour
 
     void LoadItemEquipped()
     {
-        for (int i = 0; i < maxItem; i++ )
+        for (int i = 0; i < maxItem; i++)
         {
             int f = i + 1;
-            if(PlayerPrefs.GetInt("item " + f)  != 0)
+            if (PlayerPrefs.GetInt("item " + f) != 0)
             {
                 // sesi 1 
                 isEquipped[PlayerPrefs.GetInt("item " + f) - 1] = true;
-                imageEquipButton[PlayerPrefs.GetInt("item " + f) - 1].sprite = Equipped;
+                imageEquipButton[PlayerPrefs.GetInt("item " + f) - 1].sprite = equipped;
 
                 //sesi 2
                 iconImage[i].enabled = true;
                 iconImage[i].sprite = itemIcon[PlayerPrefs.GetInt("item " + f) - 1];
+                xButton[i].SetActive(true);
             }
+            else if(PlayerPrefs.GetInt("item " + f) == 0)
+            {
+                iconImage[i].enabled = false;
+                isEquipped[i] = false;
+                imageEquipButton[i].sprite = equip;
+                xButton[i].SetActive(false);
+            }
+
         }
     }
     #endregion
@@ -167,7 +178,7 @@ public class EquipmentMenu : MonoBehaviour
 
     void Locked()
     {
-        for (int i = 1; i <= 3; i++)
+        for (int i = 1; i <= 6; i++)
         {
             if (PlayerPrefs.GetInt("m_item " + i) != 0)
                 lockItem[PlayerPrefs.GetInt("m_item " + i) - 1].SetActive(false);

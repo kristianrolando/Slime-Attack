@@ -10,14 +10,18 @@ public class Enemy : MonoBehaviour
     PlayerHealth health;
     Vector2 direction;
     GameManager gm;
+    ItemBar itembar;
 
     int currentlyLifeWood;
     int currentlyLifeRock;
     int currentlyLifeMagmaRock;
     int currentlyLifeHeart;
 
+    bool skillGreedActive;
+
     private void Start()
     {
+        itembar = GameObject.Find("Item Bar").GetComponent<ItemBar>();
         gm = GameObject.Find("Player").GetComponent<GameManager>();
         target = GameObject.Find("Player");
         score = GameObject.Find("Player").GetComponent<PlayerScore>();
@@ -33,9 +37,16 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         speed = gm.SpeedEnemy;
-        transform.position = Vector2.MoveTowards(transform.position, direction, speed * Time.deltaTime);
         transform.Rotate(0, 0, 360 * 1 * Time.deltaTime);
-
+        if (skillGreedActive)
+        {
+            Debug.Log("3");
+            transform.position = Vector2.MoveTowards(transform.position, direction, speed * Time.deltaTime * 1.8f);
+        }
+        else if (!skillGreedActive)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, direction, speed * Time.deltaTime);
+        }
     }
     public void GotDamage()
     {
@@ -60,7 +71,7 @@ public class Enemy : MonoBehaviour
         else if(gameObject.tag == "Magma Rock")
         {
             currentlyLifeMagmaRock -= 1;
-            if (currentlyLifeMagmaRock <= 0)
+            if (currentlyLifeMagmaRock <= 0 || skillGreedActive )
             {
                 score.ScoreIncrement(3);
                 SelfDestruct();
@@ -99,6 +110,16 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.name == "Player" || collision.gameObject.tag == "Terrain")
         {
             SelfDestruct();
+        }
+        if(itembar.isSkillGreed && collision.gameObject.name == "Skill Greed")
+        {
+            Debug.Log("2");
+            skillGreedActive = true;
+        }  
+        if(collision.gameObject.name == "Destroy")
+        {
+            Debug.Log("4");
+            GotDamage();
         }
     }
 }

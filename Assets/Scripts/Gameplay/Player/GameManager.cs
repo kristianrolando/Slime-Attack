@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField, Range(1, 100)] int increaseSpeed = 25;
 
     public float SpeedEnemy = 3f;
-    public PlayerScore score;
+    [SerializeField] PlayerScore score;
 
     float tempSpeed;
     bool isDifficult;

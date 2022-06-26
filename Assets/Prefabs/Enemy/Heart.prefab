@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4895948946729150736}
   - component: {fileID: 8391518805694489943}
   - component: {fileID: 1111850886120000297}
-  - component: {fileID: -6438000664187819403}
+  - component: {fileID: 4964481087857575427}
   m_Layer: 8
   m_Name: Heart
   m_TagString: Heart
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 821f79c3b1fe7f64ebc2dbf4f3384ac3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3689709412f6d4143845e14f0196cd73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,16 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d698f99ed9b164bac1e6b978236afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLifeWood: 1
-  currentlyLifeWood: 0
-  maxLifeRock: 1
-  currentlyLifeRock: 0
-  maxLifeMagmaRock: 3
-  currentlyLifeMagmaRock: 0
-  maxLifeHearth: 1
-  currentlyLifeHeart: 0
---- !u!58 &-6438000664187819403
-CircleCollider2D:
+--- !u!60 &4964481087857575427
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -117,5 +109,58 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.68
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.0173912, y: 2.0913043}
+    newSize: {x: 2.5, y: 2.09}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.4521739, y: -0.15869564}
+      - {x: 0.5608695, y: -0.049999997}
+      - {x: 0.6521739, y: 0.058695648}
+      - {x: 0.7, y: 0.16304347}
+      - {x: 0.7, y: 0.33260867}
+      - {x: 0.67826086, y: 0.4021739}
+      - {x: 0.66521734, y: 0.43260866}
+      - {x: 0.62608695, y: 0.49347824}
+      - {x: 0.5565217, y: 0.5586956}
+      - {x: 0.5043478, y: 0.59782606}
+      - {x: 0.4217391, y: 0.6369565}
+      - {x: 0.39130434, y: 0.6456521}
+      - {x: 0.2521739, y: 0.6456521}
+      - {x: 0.19999999, y: 0.63260865}
+      - {x: 0.17391303, y: 0.623913}
+      - {x: -0.039130434, y: 0.5891304}
+      - {x: -0.17391303, y: 0.60217386}
+      - {x: -0.22173911, y: 0.623913}
+      - {x: -0.29130432, y: 0.6456521}
+      - {x: -0.3043478, y: 0.6456521}
+      - {x: -0.4043478, y: 0.6413043}
+      - {x: -0.49999997, y: 0.6195652}
+      - {x: -0.57826084, y: 0.5717391}
+      - {x: -0.6434782, y: 0.51521736}
+      - {x: -0.68695647, y: 0.44565216}
+      - {x: -0.7304348, y: 0.34130433}
+      - {x: -0.7304348, y: 0.19347826}
+      - {x: -0.7217391, y: 0.16304347}
+      - {x: -0.7043478, y: 0.097826086}
+      - {x: -0.63043475, y: -0.023913043}
+      - {x: -0.59565216, y: -0.063043475}
+      - {x: -0.54347825, y: -0.11956521}
+      - {x: -0.4521739, y: -0.20652173}
+      - {x: -0.33913043, y: -0.29782608}
+      - {x: -0.19999999, y: -0.38478258}
+      - {x: -0.11304347, y: -0.44130433}
+      - {x: -0.026086956, y: -0.5282608}
+      - {x: -0.013043478, y: -0.5543478}
+      - {x: 0.017391304, y: -0.5847826}
+      - {x: 0.030434782, y: -0.5847826}
+      - {x: 0.056521736, y: -0.5673913}
+      - {x: 0.117391296, y: -0.46739128}
+      - {x: 0.22173911, y: -0.36304346}
+      - {x: 0.29130432, y: -0.3065217}
