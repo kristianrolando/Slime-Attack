@@ -178,7 +178,7 @@ public class EquipmentMenu : MonoBehaviour
 
     void Locked()
     {
-        for (int i = 1; i <= 6; i++)
+        for (int i = 1; i <= 5; i++)
         {
             if (PlayerPrefs.GetInt("m_item " + i) != 0)
                 lockItem[PlayerPrefs.GetInt("m_item " + i) - 1].SetActive(false);

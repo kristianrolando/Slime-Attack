@@ -52,6 +52,7 @@ public class PlayerAttack : MonoBehaviour
             */
             if (Input.GetMouseButtonDown(0))
             {
+                Debug.Log("touch");
                 Vector2 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 if (position.x < 0)
                     AttackLeft();

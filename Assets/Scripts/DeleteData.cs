@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class DeleteData : MonoBehaviour
 {
-    public void DeleteAll()
+    public void DeleteAll(int coin)
     {
         PlayerPrefs.DeleteAll();
-        PlayerPrefs.SetInt("coin", 1000);
+        PlayerPrefs.SetInt("coin", coin);
     }
 }

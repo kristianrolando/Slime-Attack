@@ -8,15 +8,19 @@ public class PlayerScore : MonoBehaviour
 {
     [HideInInspector] public int scoreCoin;
     [HideInInspector] public int scorePoint;
+    [HideInInspector] public int pointAdd;
 
     public TextMeshProUGUI pointText;
     public TextMeshProUGUI coinText;
     public TextMeshProUGUI finalPointText;
 
+   
+
     private void Start()
     {
         scoreCoin = 0;
         scorePoint = 0;
+        pointAdd = 1;
     }
 
     private void Update()
@@ -28,8 +32,7 @@ public class PlayerScore : MonoBehaviour
     
     public void ScoreIncrement(int value)
     {
-        scorePoint += value;
-        scoreCoin += value;
+        scoreCoin += value*pointAdd;
     }
 
     public void SaveCoin()

@@ -7,18 +7,21 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
 
-    [SerializeField] int maxHealth = 100;
-    [SerializeField] int damageWood = 10;
-    [SerializeField] int damageRock = 25;
-    [SerializeField] int damageMagmaRock = 35;
-    [SerializeField] int healthRecover = 40;
+    public int maxHealth = 100;
+    [SerializeField] int damageWood = 15;
+    [SerializeField] int damageRock = 30;
+    [SerializeField] int damageMagmaRock = 40;
+    [SerializeField] int healthRecover = 30;
+
+    public int defense = 20;
+    [HideInInspector] public int tempDef;
 
     public HealthBar healthBar;
     public GameObject gameOver;
     public GameObject cover;
 
     bool isDie;
-    int currentHealth;
+    [HideInInspector] public int currentHealth;
     Animator anim;
     PlayerScore coin;
 
@@ -29,6 +32,7 @@ public class PlayerHealth : MonoBehaviour
         anim = GetComponent<Animator>();
         coin = GetComponent<PlayerScore>();
         isDie = false;
+        tempDef = defense;
 
     }
     private void Update()
@@ -49,6 +53,7 @@ public class PlayerHealth : MonoBehaviour
             Time.timeScale = 0f;
             isDie = true;
         }
+        healthBar.SetHealth(currentHealth);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -56,22 +61,22 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.tag == "Wood")
         {
             TakeDamage(damageWood);
-            anim.SetTrigger("hurt");
+            //anim.SetTrigger("hurt");
         }
         else if (collision.gameObject.tag == "Rock")
         {
             TakeDamage(damageRock);
-            anim.SetTrigger("hurt");
+            //anim.SetTrigger("hurt");
         }
         else if (collision.gameObject.tag == "Magma Rock")
         {
             TakeDamage(damageMagmaRock);
-            anim.SetTrigger("hurt");
+            //anim.SetTrigger("hurt");
         }
         else if (collision.gameObject.tag == "Heart")
-            healthRecovery();
+            HealthRecovery();
     }
-    public void healthRecovery()
+    public void HealthRecovery()
     {
         // called when player attack heart
         currentHealth += healthRecover;
@@ -80,7 +85,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+        currentHealth = currentHealth - damage + defense;
         healthBar.SetHealth(currentHealth);
     }
 }

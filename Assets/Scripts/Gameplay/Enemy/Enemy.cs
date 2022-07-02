@@ -87,7 +87,7 @@ public class Enemy : MonoBehaviour
             currentlyLifeHeart -= 1;
             if (currentlyLifeHeart <= 0)
             {
-                health.healthRecovery();
+                health.HealthRecovery();
                 SelfDestruct();
             }
         }

@@ -26,14 +26,14 @@ public class ShopMenu : MonoBehaviour
 
     void LockBought()
     {
-        for (int i = 1; i <= 3; i++)
+        for (int i = 1; i <= 2; i++)
         {
             if (PlayerPrefs.GetInt("m_skill " + i) != 0)
                 lockSkill[PlayerPrefs.GetInt("m_skill " + i) - 1].SetActive(true);
             if (PlayerPrefs.GetInt("m_skill " + i) == 0)
                 lockSkill[i - 1].SetActive(false);
         }
-        for (int i = 1; i <= 6; i++)
+        for (int i = 1; i <= 5; i++)
         {
             if (PlayerPrefs.GetInt("m_item " + i) != 0)
                 lockItem[PlayerPrefs.GetInt("m_item " + i) - 1].SetActive(true);
@@ -114,7 +114,7 @@ public class ShopMenu : MonoBehaviour
     {
         if (IDSkill != 0)
         {
-            for (int i = 1; i <= 3 ; i++)
+            for (int i = 1; i <= 2 ; i++)
             {
                 if(IDSkill == i)
                 {
@@ -136,7 +136,7 @@ public class ShopMenu : MonoBehaviour
         }
         if (IDItem != 0)
         {
-            for (int i = 1; i <= 6; i++)
+            for (int i = 1; i <= 5; i++)
             {
                 if (IDItem == i)
                 {
