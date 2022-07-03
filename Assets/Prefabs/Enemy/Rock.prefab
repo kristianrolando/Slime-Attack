@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6942020576680250958}
   - component: {fileID: 6860999479661445066}
   - component: {fileID: 4527554240277479127}
+  - component: {fileID: -8221563378957598998}
   m_Layer: 8
   m_Name: Rock
   m_TagString: Rock
@@ -71,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: cbdd0b9e1e614dc45829775b72924209, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -171,3 +172,24 @@ PolygonCollider2D:
       - {x: 0.08043478, y: -0.74999994}
       - {x: 0.1326087, y: -0.723913}
       - {x: 0.2369565, y: -0.6673913}
+--- !u!50 &-8221563378957598998
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8104346738393341254}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

@@ -12,11 +12,15 @@ public class ItemBar : MonoBehaviour
 
     [HideInInspector] public PlayerHealth health;
     [HideInInspector] public PlayerScore score;
+    [HideInInspector] public PlayerAttack attack;
+    [HideInInspector] public GameManager gm;
 
     private void Awake()
     {
         health = GameObject.Find("Player").GetComponent<PlayerHealth>();
         score = GameObject.Find("Player").GetComponent<PlayerScore>();
+        gm = GameObject.Find("Player").GetComponent<GameManager>();
+        attack = GameObject.Find("Player").GetComponent<PlayerAttack>();
     }
 
     void Start()
@@ -58,31 +62,34 @@ public class ItemBar : MonoBehaviour
         switch(i)
         {
             case 1:
-                GreedTrue();
+                Greed();
                 break;
             case 2:
                 DoublePunch();
                 break;
-            case 3:
-                Arrow();
-                break;
         }
+        PlayerPrefs.SetInt("skill " + index, 0);
+        PlayerPrefs.SetInt("m_skill " + index, 0);
+
+        lockItemBar[index - 1].SetActive(true);
     }
 
-    public void GreedTrue()
+    public GameObject greedObject;
+    public void Greed()
     {
-        isSkillGreed = true;
-        Invoke(nameof(GreedFalse), 7f);
+        gm.SpeedEnemy = 7f;
+        greedObject.SetActive(true);
+        health.isGreed = true;
+        attack.SkillGreedAnim();
+        Invoke("StopGreed", 20f);
     }
-    void GreedFalse()
+    void StopGreed()
     {
-        isSkillGreed = false;
+        health.isGreed = false;
+        gm.SpeedEnemy = gm.tempSpeed;
+        greedObject.SetActive(false);
     }
     void DoublePunch()
-    {
-
-    }
-    void Arrow()
     {
 
     }

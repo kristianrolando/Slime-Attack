@@ -32,7 +32,8 @@ public class PlayerScore : MonoBehaviour
     
     public void ScoreIncrement(int value)
     {
-        scoreCoin += value*pointAdd;
+        scorePoint += value * pointAdd;
+        scoreCoin += value;
     }
 
     public void SaveCoin()

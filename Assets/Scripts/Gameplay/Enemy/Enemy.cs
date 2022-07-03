@@ -10,22 +10,20 @@ public class Enemy : MonoBehaviour
     PlayerHealth health;
     Vector2 direction;
     GameManager gm;
-    ItemBar itembar;
+    ParticleEffect particle;
 
     int currentlyLifeWood;
     int currentlyLifeRock;
     int currentlyLifeMagmaRock;
     int currentlyLifeHeart;
 
-    bool skillGreedActive;
-
     private void Start()
     {
-        itembar = GameObject.Find("Item Bar").GetComponent<ItemBar>();
         gm = GameObject.Find("Player").GetComponent<GameManager>();
         target = GameObject.Find("Player");
         score = GameObject.Find("Player").GetComponent<PlayerScore>();
         health = GameObject.Find("Player").GetComponent<PlayerHealth>();
+        particle = GameObject.Find("Particle Effect").GetComponent<ParticleEffect>();
         direction = target.transform.position + new Vector3(0f, 0.5f, 0f);
 
         currentlyLifeWood = gm.maxLifeWood;
@@ -38,19 +36,12 @@ public class Enemy : MonoBehaviour
     {
         speed = gm.SpeedEnemy;
         transform.Rotate(0, 0, 360 * 1 * Time.deltaTime);
-        if (skillGreedActive)
-        {
-            Debug.Log("3");
-            transform.position = Vector2.MoveTowards(transform.position, direction, speed * Time.deltaTime * 1.8f);
-        }
-        else if (!skillGreedActive)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, direction, speed * Time.deltaTime);
-        }
+
+        transform.position = Vector2.MoveTowards(transform.position, direction, speed * Time.deltaTime);
     }
     public void GotDamage()
     {
-        if(gameObject.tag == "Wood")
+        if (gameObject.tag == "Wood")
         {
             currentlyLifeWood -= 1;
             if (currentlyLifeWood <= 0)
@@ -59,7 +50,7 @@ public class Enemy : MonoBehaviour
                 SelfDestruct();
             }
         }
-        else if(gameObject.tag == "Rock")
+        else if (gameObject.tag == "Rock")
         {
             currentlyLifeRock -= 1;
             if (currentlyLifeRock <= 0)
@@ -68,10 +59,10 @@ public class Enemy : MonoBehaviour
                 SelfDestruct();
             }
         }
-        else if(gameObject.tag == "Magma Rock")
+        else if (gameObject.tag == "Magma Rock")
         {
             currentlyLifeMagmaRock -= 1;
-            if (currentlyLifeMagmaRock <= 0 || skillGreedActive )
+            if (currentlyLifeMagmaRock <= 0)
             {
                 score.ScoreIncrement(3);
                 SelfDestruct();
@@ -82,7 +73,7 @@ public class Enemy : MonoBehaviour
                 Invoke("NormalizeTime", 2f);
             }
         }
-        else if(gameObject.tag == "Heart")
+        else if (gameObject.tag == "Heart")
         {
             currentlyLifeHeart -= 1;
             if (currentlyLifeHeart <= 0)
@@ -103,6 +94,7 @@ public class Enemy : MonoBehaviour
         if (gameObject.tag == "Magma Rock")
             Time.timeScale = 1f;
         Destroy(gameObject);
+        particle.Destruct(transform.position);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -111,15 +103,9 @@ public class Enemy : MonoBehaviour
         {
             SelfDestruct();
         }
-        if(itembar.isSkillGreed && collision.gameObject.name == "Skill Greed")
+        if(collision.gameObject.name == "RangeSkillGreed")
         {
-            Debug.Log("2");
-            skillGreedActive = true;
-        }  
-        if(collision.gameObject.name == "Destroy")
-        {
-            Debug.Log("4");
-            GotDamage();
+            SelfDestruct();
         }
     }
 }

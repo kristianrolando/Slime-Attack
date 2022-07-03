@@ -10,7 +10,6 @@ TagManager:
   - Wood
   - Heart
   - Terrain
-  - Greed
   layers:
   - Default
   - TransparentFX
@@ -21,7 +20,7 @@ TagManager:
   - 
   - 
   - Enemy
-  - 
+  - Player
   - 
   - 
   - 

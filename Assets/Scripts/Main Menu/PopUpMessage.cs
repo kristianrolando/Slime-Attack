@@ -11,7 +11,7 @@ public class PopUpMessage : MonoBehaviour
     {
         popUpParent = GameObject.Find("Pop Up");
         transform.SetParent(popUpParent.gameObject.transform);
-        Invoke(nameof(SelfDestruct), 3f);
+        Invoke("SelfDestruct", 3f);
     }
 
     void SelfDestruct()

@@ -39,17 +39,17 @@ public class PlayerAttack : MonoBehaviour
     {
         if (time <= 0)
         { 
-            /*
             if (Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
-                Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+                Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+                touchPosition.z = 0f;
                 if (touchPosition.x < 0)
                     AttackLeft();
                 else
                     AttackRight();
             }
-            */
+            /*
             if (Input.GetMouseButtonDown(0))
             {
                 Debug.Log("touch");
@@ -122,5 +122,10 @@ public class PlayerAttack : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPosRight.position, attackRangeRight);
         Gizmos.DrawWireSphere(attackPosLeft.position, attackRangeLeft);
+    }
+
+    public void SkillGreedAnim()
+    {
+        anim.SetTrigger("greed");
     }
 }

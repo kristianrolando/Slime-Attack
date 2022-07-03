@@ -15,7 +15,7 @@ public class Background : MonoBehaviour
 
     void Start()
     {
-        spriteBackground.sprite = backgroundImage[PlayerPrefs.GetInt("stage") - 1];
+        spriteBackground.sprite = backgroundImage[0];
     }
 
 }

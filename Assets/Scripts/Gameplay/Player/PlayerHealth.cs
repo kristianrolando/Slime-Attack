@@ -8,9 +8,9 @@ public class PlayerHealth : MonoBehaviour
 {
 
     public int maxHealth = 100;
-    [SerializeField] int damageWood = 15;
-    [SerializeField] int damageRock = 30;
-    [SerializeField] int damageMagmaRock = 40;
+    [SerializeField] int damageWood = 25;
+    [SerializeField] int damageRock = 40;
+    [SerializeField] int damageMagmaRock = 50;
     [SerializeField] int healthRecover = 30;
 
     public int defense = 20;
@@ -22,14 +22,15 @@ public class PlayerHealth : MonoBehaviour
 
     bool isDie;
     [HideInInspector] public int currentHealth;
-    Animator anim;
+    [HideInInspector] public bool isGreed;
     PlayerScore coin;
+    ParticleEffect particle;
 
     private void Start()
     {
+        particle = GameObject.Find("Particle Effect").GetComponent<ParticleEffect>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        anim = GetComponent<Animator>();
         coin = GetComponent<PlayerScore>();
         isDie = false;
         tempDef = defense;
@@ -37,6 +38,10 @@ public class PlayerHealth : MonoBehaviour
     }
     private void Update()
     {
+        if (isGreed)
+        {
+            currentHealth = 100;
+        }
         // decrease health
         if (currentHealth >=  maxHealth)
         {
@@ -45,7 +50,7 @@ public class PlayerHealth : MonoBehaviour
         if(currentHealth <=0 && !isDie)
         {
             // die
-            anim.SetTrigger("death");
+            //anim.SetTrigger("death");
 
             gameOver.SetActive(true);
             cover.SetActive(true);
@@ -81,11 +86,13 @@ public class PlayerHealth : MonoBehaviour
         // called when player attack heart
         currentHealth += healthRecover;
         healthBar.SetHealth(currentHealth);
+        particle.Health(transform.position);
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth = currentHealth - damage + defense;
         healthBar.SetHealth(currentHealth);
+        particle.Blood(transform.position);
     }
 }

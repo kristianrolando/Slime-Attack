@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public float SpeedEnemy = 3f;
     [SerializeField] PlayerScore score;
 
-    float tempSpeed;
+    [HideInInspector] public float tempSpeed;
     bool isDifficult;
     int tempScore;
 

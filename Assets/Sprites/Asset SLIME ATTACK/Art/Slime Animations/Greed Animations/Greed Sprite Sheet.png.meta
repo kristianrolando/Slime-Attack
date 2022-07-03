@@ -1,0 +1,488 @@
+fileFormatVersion: 2
+guid: e54f5621f038b8d468a3d65c17e79417
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3946575116393793724
+    second: Greed Sprite Sheet_0
+  - first:
+      213: -1372965607506998951
+    second: Greed Sprite Sheet_1
+  - first:
+      213: -3013561451843757154
+    second: Greed Sprite Sheet_2
+  - first:
+      213: 4531316407849581610
+    second: Greed Sprite Sheet_3
+  - first:
+      213: 6695984800926168588
+    second: Greed Sprite Sheet_4
+  - first:
+      213: -7088586780584921530
+    second: Greed Sprite Sheet_5
+  - first:
+      213: 233419891769844923
+    second: Greed Sprite Sheet_6
+  - first:
+      213: 3098767732253581273
+    second: Greed Sprite Sheet_7
+  - first:
+      213: -3451125709446990495
+    second: Greed Sprite Sheet_8
+  - first:
+      213: 653561843658903239
+    second: Greed Sprite Sheet_9
+  - first:
+      213: -4807899324911194037
+    second: Greed Sprite Sheet_10
+  - first:
+      213: -4641148319363821349
+    second: Greed Sprite Sheet_11
+  - first:
+      213: -2709955953496359636
+    second: Greed Sprite Sheet_12
+  - first:
+      213: 4195838603486904073
+    second: Greed Sprite Sheet_13
+  - first:
+      213: 1901625966327866037
+    second: Greed Sprite Sheet_14
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Greed Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 756
+        width: 350
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 447b3fb67d2fa39c0800000000000000
+      internalID: -3946575116393793724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greed Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 965
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95987b3ed0f32fce0800000000000000
+      internalID: -1372965607506998951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greed Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 760
+        width: 387
+        height: 239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9bda0a73ddad26d0800000000000000
+      internalID: -3013561451843757154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greed Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 758
+        width: 339
+        height: 294
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4731761}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2cf5c6d34872ee30800000000000000
+      internalID: 4531316407849581610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greed Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 756
+        width: 385
+        height: 204
+      alignment: 9
+      pivot: {x: 0.5, y: 0.59020156}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c067e9813baecec50800000000000000
+      internalID: 6695984800926168588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greed Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 952
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 646b4b741e740ad90800000000000000
+      internalID: -7088586780584921530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greed Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 367
+        width: 396
+        height: 301
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4388664}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb4a374a7264d3300800000000000000
+      internalID: 233419891769844923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greed Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 365
+        width: 413
+        height: 325
+      alignment: 9
+      pivot: {x: 0.5, y: 0.41911575}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dfda62a5d8010b20800000000000000
+      internalID: 3098767732253581273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greed Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 368
+        width: 363
+        height: 298
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4255408}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 165b13db3732b10d0800000000000000
+      internalID: -3451125709446990495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greed Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 580
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cec90ab80be11900800000000000000
+      internalID: 653561843658903239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greed Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1444
+        y: 371
+        width: 385
+        height: 202
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5447912}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b40f3de8909e64db0800000000000000
+      internalID: -4807899324911194037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greed Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1532
+        y: 564
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd01b628134579fb0800000000000000
+      internalID: -4641148319363821349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greed Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 512
+        width: 4
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2df4e21b6d446ad0800000000000000
+      internalID: -2709955953496359636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greed Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 448
+        width: 8
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90f35b7bafc9a3a30800000000000000
+      internalID: 4195838603486904073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greed Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 44
+        width: 350
+        height: 253
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b2a1aabdbee36a10800000000000000
+      internalID: 1901625966327866037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
