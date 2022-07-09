@@ -94,7 +94,7 @@ public class Enemy : MonoBehaviour
         if (gameObject.tag == "Magma Rock")
             Time.timeScale = 1f;
         Destroy(gameObject);
-        particle.Destruct(transform.position);
+        //particle.Destruct(transform.position);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

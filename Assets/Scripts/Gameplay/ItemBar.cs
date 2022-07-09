@@ -91,7 +91,7 @@ public class ItemBar : MonoBehaviour
     }
     void DoublePunch()
     {
-
+        attack.DoublePunch();
     }
     #endregion
 

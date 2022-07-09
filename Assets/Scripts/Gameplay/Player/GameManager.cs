@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] GameObject[] objectFalse;
+    [SerializeField] GameObject[] objectTrue;
+
     //Set Enemy Stat
     public int maxLifeWood = 1;
     public int maxLifeRock = 1;
@@ -19,6 +22,17 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public float tempSpeed;
     bool isDifficult;
     int tempScore;
+    private void Awake()
+    {
+        for(int i = 0; i < objectFalse.Length; i++)
+        {
+            objectFalse[i].SetActive(false);
+        }
+        for (int i = 0; i < objectTrue.Length; i++)
+        {
+            objectTrue[i].SetActive(true);
+        }
+    }
 
     private void Start()
     {

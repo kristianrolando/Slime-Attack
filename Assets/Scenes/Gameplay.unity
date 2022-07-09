@@ -631,7 +631,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 182430095}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.3, y: 0.74, z: 0}
+  m_LocalPosition: {x: 2.5, y: 0.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1806334213}
@@ -3413,7 +3413,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 448e07e72341184468a0c123987b9c60, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 803a18e83bc44664f8746b6196d06807, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3455,7 +3455,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1441995790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.3, y: 0.74, z: 0}
+  m_LocalPosition: {x: -2.5, y: 0.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1806334213}
@@ -3937,7 +3937,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1653164580
 Transform:
   m_ObjectHideFlags: 0
@@ -4644,13 +4644,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1806334213}
   - component: {fileID: 1806334212}
+  - component: {fileID: 1806334210}
   - component: {fileID: 1806334211}
   - component: {fileID: 1806334209}
   - component: {fileID: 1806334214}
   - component: {fileID: 1806334215}
   - component: {fileID: 1806334216}
   - component: {fileID: 1806334218}
-  - component: {fileID: 1806334210}
+  - component: {fileID: 1806334217}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -4805,14 +4806,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPosRight: {fileID: 182430096}
   attackPosLeft: {fileID: 1441995791}
-  attackRangeRight: 2.3
-  attackRangeLeft: 2.3
+  attackRangeRight: 2.5
+  attackRangeLeft: 2.5
   isEnemies:
     serializedVersion: 2
     m_Bits: 256
   statEnimiesRight: 0
   statEnimiesLeft: 0
-  timeBetweenAttack: 0.001
+  attSound: {fileID: 1806334217}
+  timeBetweenAttack: 0.15
 --- !u!114 &1806334215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4855,6 +4857,102 @@ MonoBehaviour:
   pointText: {fileID: 410827876}
   coinText: {fileID: 1108276184}
   finalPointText: {fileID: 384019648}
+--- !u!82 &1806334217
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806334208}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: bf55d1f06d24da443a946212ab6fb1e1, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &1806334218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4867,6 +4965,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb5cc06d66b4a0845976015ef8e39076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectFalse:
+  - {fileID: 1653164579}
+  - {fileID: 631974262}
+  - {fileID: 1886949490}
+  - {fileID: 269464820}
+  objectTrue:
+  - {fileID: 1783418037}
+  - {fileID: 617486130}
+  - {fileID: 1129027769}
+  - {fileID: 814613261}
+  - {fileID: 1805975038}
+  - {fileID: 1706799025}
+  - {fileID: 1806334208}
+  - {fileID: 1403752807}
+  - {fileID: 1126750155}
   maxLifeWood: 1
   maxLifeRock: 1
   maxLifeMagmaRock: 3
@@ -5391,18 +5504,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.09517647, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.01565361, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 58161c9db94fba04a9e99fcb649c2632, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 92759ff46c42e4f4f94435f0812a856b, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.942
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0

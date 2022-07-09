@@ -15,6 +15,8 @@ public class PlayerAttack : MonoBehaviour
 
     [HideInInspector] public bool statEnimiesRight, statEnimiesLeft;
 
+    [SerializeField] AudioSource attSound;
+
     Animator anim;
     SpriteRenderer sprite;
 
@@ -33,13 +35,27 @@ public class PlayerAttack : MonoBehaviour
     {
         DetectionEnemies();
         Attack();
+        if(DoublePunchSkill)
+        {
+            AttackLeft();
+            AttackRight();
+        }
     }
 
     void Attack()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector2 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if (position.x < 0)
+                AttackLeft();
+            else
+                AttackRight();
+        }
+        /*
         if (time <= 0)
         { 
-            if (Input.touchCount > 0)
+            /*if (Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
                 Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
@@ -48,8 +64,24 @@ public class PlayerAttack : MonoBehaviour
                     AttackLeft();
                 else
                     AttackRight();
+                attSound.Play();
             }
-            /*
+            if (Input.touchCount > 0)
+            {
+                Touch touch = Input.GetTouch(0);
+                Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+                touchPosition.z = 0f;
+                
+                if(touch.phase == TouchPhase.Ended)
+                {
+                    if (touchPosition.x < 0)
+                        AttackLeft();
+                    else
+                        AttackRight();
+                    attSound.Play();
+                }
+                
+            }
             if (Input.GetMouseButtonDown(0))
             {
                 Debug.Log("touch");
@@ -59,23 +91,12 @@ public class PlayerAttack : MonoBehaviour
                 else
                     AttackRight();
             }
-            /*
-            if (Input.touchCount > 0)
-            {
-                Touch touch = Input.GetTouch(0);
-                Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
-                if (touchPosition.x < 0)
-                    AttackLeft();
-                else
-                    AttackRight();
-            }
-            */
             time = timeBetweenAttack;
         }
         else
         {
             time -= Time.deltaTime;
-        }
+        } */
     }
 
 
@@ -127,5 +148,16 @@ public class PlayerAttack : MonoBehaviour
     public void SkillGreedAnim()
     {
         anim.SetTrigger("greed");
+    }
+    bool DoublePunchSkill;
+    public void DoublePunch()
+    {
+        anim.SetTrigger("doublepunch");
+        DoublePunchSkill = true;
+        Invoke("StopDoublePunch", 5f);
+    }
+    void StopDoublePunch()
+    {
+        DoublePunchSkill = false;
     }
 }
