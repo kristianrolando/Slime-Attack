@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] int damageMagmaRock = 50;
     [SerializeField] int healthRecover = 30;
 
-    public int defense = 20;
+    public int defense = 10;
     [HideInInspector] public int tempDef;
 
     public HealthBar healthBar;

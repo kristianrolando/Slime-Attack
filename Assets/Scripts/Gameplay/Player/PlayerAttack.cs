@@ -16,6 +16,10 @@ public class PlayerAttack : MonoBehaviour
     [HideInInspector] public bool statEnimiesRight, statEnimiesLeft;
 
     [SerializeField] AudioSource attSound;
+    [SerializeField] AudioSource greedSound;
+    [SerializeField] AudioSource doublePunchSound;
+
+    [SerializeField] GameObject tutorial;
 
     Animator anim;
     SpriteRenderer sprite;
@@ -27,7 +31,7 @@ public class PlayerAttack : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
-
+        tutorial.SetActive(true);
         Time.timeScale = 1f;
     }
 
@@ -46,6 +50,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            tutorial.SetActive(false);
             Vector2 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if (position.x < 0)
                 AttackLeft();
@@ -123,6 +128,7 @@ public class PlayerAttack : MonoBehaviour
             anim.SetTrigger("punch");
             sprite.flipX = false;
             enemiesToDamageRight[i].GetComponent<Enemy>().GotDamage();
+            attSound.Play();
         }
     }
 
@@ -134,6 +140,7 @@ public class PlayerAttack : MonoBehaviour
             anim.SetTrigger("punch");
             sprite.flipX = true;
             enemiesToDamageLeft[i].GetComponent<Enemy>().GotDamage();
+            attSound.Play();
         }
     }
 
@@ -148,16 +155,18 @@ public class PlayerAttack : MonoBehaviour
     public void SkillGreedAnim()
     {
         anim.SetTrigger("greed");
+        greedSound.Play();
     }
     bool DoublePunchSkill;
     public void DoublePunch()
     {
         anim.SetTrigger("doublepunch");
         DoublePunchSkill = true;
+        doublePunchSound.Play();
         Invoke("StopDoublePunch", 5f);
     }
     void StopDoublePunch()
     {
-        DoublePunchSkill = false;
+        DoublePunchSkill = false;  
     }
 }

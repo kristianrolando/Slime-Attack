@@ -73,7 +73,7 @@ public class SkillMenu : MonoBehaviour
 
     void Locked()
     {
-        for (int i = 1; i <= 2; i++)
+        for (int i = 1; i < 3; i++)
         {
             if (PlayerPrefs.GetInt("m_skill " + i) != 0)
                 lockSkill[PlayerPrefs.GetInt("m_skill " + i) - 1].SetActive(false);

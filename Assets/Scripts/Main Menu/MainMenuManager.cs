@@ -11,7 +11,7 @@ public class MainMenuManager : MonoBehaviour
     void Start()
     {
         CloseOthersMenu();
-        CloseEmptyScoreBar();
+        //CloseEmptyScoreBar();
     }
 
     void CloseOthersMenu()

@@ -27,6 +27,10 @@ public class ItemBar : MonoBehaviour
     {
         LoadSkillAndItem();
     }
+    private void Update()
+    {
+        
+    }
 
     void LoadSkillAndItem()
     {
@@ -114,7 +118,6 @@ public class ItemBar : MonoBehaviour
             {
                 case 1:
                     HealthPotion(index);
-                    Debug.Log("health");
                     break;
                 case 2:
                     ScorePotion(2);
@@ -130,8 +133,7 @@ public class ItemBar : MonoBehaviour
                     break;
             }
             PlayerPrefs.SetInt("item " + index, 0);
-            PlayerPrefs.SetInt("m_item " + index, 0);
-
+            PlayerPrefs.SetInt("m_item " + i, 0);
             lockItemBar[index + 1].SetActive(true);
         }
         
@@ -151,11 +153,11 @@ public class ItemBar : MonoBehaviour
     }
     void DefensePotion()
     {
-        health.defense += 6;
+        health.defense += 5;
     }
     void AttackPotion()
     {
-        health.defense += health.defense + 4;
+        health.defense += 3;
     }
 
     #endregion
