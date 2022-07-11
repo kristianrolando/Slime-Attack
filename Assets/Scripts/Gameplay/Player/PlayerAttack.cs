@@ -20,6 +20,11 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] AudioSource doublePunchSound;
 
     [SerializeField] GameObject tutorial;
+    [SerializeField] GameObject[] coverTutorial;
+    float time1;
+    bool isAtt;
+    [SerializeField] float timeBetweenTutorial = 1f;
+    bool isLeft;
 
     Animator anim;
     SpriteRenderer sprite;
@@ -44,12 +49,42 @@ public class PlayerAttack : MonoBehaviour
             AttackLeft();
             AttackRight();
         }
+        if(!isAtt)
+        {
+            TutorialScene();
+        }
+
+        
+    }
+    void TutorialScene()
+    {
+        if (time1 <= 0)
+        {
+            if(isLeft)
+            {
+                coverTutorial[0].SetActive(false);
+                coverTutorial[1].SetActive(true);
+                isLeft = false;
+            }
+            else if (!isLeft)
+            {
+                coverTutorial[0].SetActive(true);
+                coverTutorial[1].SetActive(false);
+                isLeft = true;
+            }
+            time1 = timeBetweenTutorial;
+        }
+        else
+        {
+            time1 -= Time.deltaTime;
+        }
     }
 
-    void Attack()
+      void Attack()
     {
         if (Input.GetMouseButtonDown(0))
         {
+            isAtt = true;
             tutorial.SetActive(false);
             Vector2 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if (position.x < 0)

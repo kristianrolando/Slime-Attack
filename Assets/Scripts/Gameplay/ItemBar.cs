@@ -27,10 +27,7 @@ public class ItemBar : MonoBehaviour
     {
         LoadSkillAndItem();
     }
-    private void Update()
-    {
-        
-    }
+
 
     void LoadSkillAndItem()
     {
@@ -61,7 +58,7 @@ public class ItemBar : MonoBehaviour
     [HideInInspector] public bool isSkillGreed;
 
     public void SkillButton(int index)
-    {
+    { 
         int i =  PlayerPrefs.GetInt("skill " + index);
         switch(i)
         {
@@ -72,9 +69,8 @@ public class ItemBar : MonoBehaviour
                 DoublePunch();
                 break;
         }
-        PlayerPrefs.SetInt("skill " + index, 0);
-        PlayerPrefs.SetInt("m_skill " + index, 0);
-
+        //PlayerPrefs.SetInt("skill " + index, 0);
+        //PlayerPrefs.SetInt("m_skill " + index, 0);
         lockItemBar[index - 1].SetActive(true);
     }
 
